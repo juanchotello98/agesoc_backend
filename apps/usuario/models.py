@@ -38,6 +38,9 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
     REQUIRED_FIELDS = [] # cedula y password son requiridos por defecto
 
+    def __str__(self):
+        return ("%s "%(self.nombre + ' ' + self.apellido))
+
 
     def get_full_name(self):
         return self.nombre + ' ' + self.apellido

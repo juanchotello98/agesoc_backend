@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_filters',
     'apps.usuario',
     'apps.cargo',
+    'apps.rol',
     
 ]
 
