@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'apps.usuario',
     'apps.cargo',
     'apps.rol',
+    'apps.tipoproceso',
+    'apps.proceso',
     
 ]
 
