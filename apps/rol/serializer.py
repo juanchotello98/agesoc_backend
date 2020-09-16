@@ -3,6 +3,7 @@ from rest_framework import serializers, fields
 
 
 class RolSerializer(serializers.ModelSerializer):
+	usuarios = serializers.StringRelatedField(many=True)
 	class Meta: 
 		model = Rol
-		fields = '__all__'
+		fields = ('id', 'nombre', 'usuarios')

@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser, PermissionsMixin)
-
+from apps.cargo.models import Cargo
+from apps.rol.models import Rol
+from apps.proceso.models import Proceso
 
 # Create your models here.
 class ManejadorUsuario(BaseUserManager):
@@ -28,6 +30,9 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     apellido = models.CharField(max_length=50)
     actividad_colectiva = models.CharField(max_length=50)
     ips = models.CharField(max_length=50)
+    cargo = models.ForeignKey(Cargo, related_name='usuarios',default=4, on_delete=models.CASCADE) #default = Auxiliar o Técnico Admistrativo
+    rol = models.ForeignKey(Rol, related_name='usuarios',default=1, on_delete=models.CASCADE) #default = Evaluado
+    proceso = models.ForeignKey(Proceso, related_name='usuarios',default=20, on_delete=models.CASCADE) #default = GESTIÓN DE LA INFORMACIÓN
     
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -39,7 +44,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = [] # cedula y password son requiridos por defecto
 
     def __str__(self):
-        return ("%s "%(self.nombre + ' ' + self.apellido))
+        return ('%d: %s'  %(self.id,self.nombre + ' ' + self.apellido))
+        #return '%d: %s' % (self.id, self.nombre)
 
 
     def get_full_name(self):

@@ -4,6 +4,7 @@ from rest_framework import serializers, fields
 
 
 class CargoSerializer(serializers.ModelSerializer):
+	usuarios = serializers.StringRelatedField(many=True)
 	class Meta: 
 		model = Cargo
-		fields = '__all__'
+		fields = ('id','nombre','usuarios')
