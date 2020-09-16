@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'apps.rol',
     'apps.tipoproceso',
     'apps.proceso',
+    'apps.pregunta',
+    'apps.respuesta',
     
 ]
 

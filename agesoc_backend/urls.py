@@ -24,5 +24,7 @@ urlpatterns = [
     path('api/v1.0/', include('apps.cargo.urls')),
     path('api/v1.0/', include('apps.rol.urls')),
     path('api/v1.0/', include('apps.tipoproceso.urls')),
-    path('api/v1.0/', include('apps.proceso.urls'))    
+    path('api/v1.0/', include('apps.proceso.urls')),
+    path('api/v1.0/', include('apps.pregunta.urls')),
+    path('api/v1.0/', include('apps.respuesta.urls'))    
 ]
