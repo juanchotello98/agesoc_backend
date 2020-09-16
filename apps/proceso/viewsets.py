@@ -6,4 +6,5 @@ from django_filters.rest_framework import DjangoFilterBackend
 class ProcesoViewSet(viewsets.ModelViewSet):
     queryset = Proceso.objects.all()
     serializer_class = ProcesoSerializer
-    filter_backends = ['nombre']
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['nombre']
