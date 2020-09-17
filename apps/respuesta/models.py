@@ -4,3 +4,6 @@ from django.db import models
 
 class Respuesta(models.Model):
     seleccion = models.IntegerField()
+    
+    def __str__(self):
+        return '%d: %d' %(self.id, self.seleccion)

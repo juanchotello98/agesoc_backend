@@ -1,6 +1,6 @@
 from django.db import models
 from apps.tipoproceso.models import Tipoproceso
-from django.utils import timezone
+
 
 # Create your models here.
 

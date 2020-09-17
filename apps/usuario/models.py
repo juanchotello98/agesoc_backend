@@ -33,6 +33,7 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     cargo = models.ForeignKey(Cargo, related_name='usuarios',default=4, on_delete=models.CASCADE) #default = Auxiliar o Técnico Admistrativo
     rol = models.ForeignKey(Rol, related_name='usuarios',default=1, on_delete=models.CASCADE) #default = Evaluado
     proceso = models.ForeignKey(Proceso, related_name='usuarios',default=20, on_delete=models.CASCADE) #default = GESTIÓN DE LA INFORMACIÓN
+    respondio = models.BooleanField(default=False)
     
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

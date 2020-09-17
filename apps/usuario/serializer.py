@@ -4,10 +4,11 @@ from django.contrib.auth.hashers import make_password
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
+	preguntas_evaluado = serializers.StringRelatedField(many=True)
 	class Meta: 
 		model = Usuario
 		fields = ('id','cedula','password','nombre','apellido','actividad_colectiva',
-        'ips', 'cargo','rol','proceso')
+        'ips', 'cargo','rol','proceso','respondio','preguntas_evaluado')
 	def create(self, validate_data):
 		validate_data['password'] = make_password(validate_data['password'])
 		return super(UsuarioSerializer, self).create(validate_data)

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url , include
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 
 urlpatterns = [
@@ -26,5 +27,7 @@ urlpatterns = [
     path('api/v1.0/', include('apps.tipoproceso.urls')),
     path('api/v1.0/', include('apps.proceso.urls')),
     path('api/v1.0/', include('apps.pregunta.urls')),
-    path('api/v1.0/', include('apps.respuesta.urls'))    
+    path('api/v1.0/', include('apps.respuesta.urls')),
+    path('api/v1.0/', include('apps.preguntasevaluado.urls')),
+    url(r'^api/v1.0/auth/obtain_token/', obtain_jwt_token),    
 ]
