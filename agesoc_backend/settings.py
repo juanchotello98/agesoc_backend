@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'apps.pregunta',
     'apps.respuesta',
     'apps.preguntasevaluado',
+    'apps.respuestaencuesta'
     
 ]
 

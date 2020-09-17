@@ -4,7 +4,10 @@ from django.db import models
 
 class Pregunta(models.Model):
     nombre = models.CharField(max_length=400)
-
+    
+    class Meta:
+        ordering = ['id']
+    
     def __str__(self):
         return '%d: %s' %(self.id, self.nombre)
         

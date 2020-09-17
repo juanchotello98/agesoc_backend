@@ -11,6 +11,7 @@ class Preguntasevaluado(models.Model):
     respuesta = models.ForeignKey(Respuesta, related_name='preguntas_evaluado', on_delete=models.CASCADE)
     evaluado = models.ForeignKey(Usuario, related_name='preguntas_evaluado', on_delete=models.CASCADE)
     fecha = models.DateTimeField(auto_now_add=True)
+    
     class Meta:
         ordering = ['id']
     

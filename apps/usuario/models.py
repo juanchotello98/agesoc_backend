@@ -44,6 +44,9 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
     REQUIRED_FIELDS = [] # cedula y password son requiridos por defecto
 
+    class Meta:
+        ordering = ['id']
+        
     def __str__(self):
         return ('%d: %s'  %(self.id,self.nombre + ' ' + self.apellido))
         #return '%d: %s' % (self.id, self.nombre)
