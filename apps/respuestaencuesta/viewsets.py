@@ -11,10 +11,10 @@ class RespuestaencuestaViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['pregunta', 'respuesta', 'evaluado', 'rol', 'proceso',
     'pregunta__id', 'pregunta__nombre',
-    'rol__id', 'rol__nombre',
+    'rol__id', 'rol__rol',
     'respuesta__id','respuesta__seleccion',
     'evaluado__id','evaluado__cedula', 'evaluado__nombre',
-    'proceso__id', 'proceso__nombre', 'proceso__tipoproceso__id', 'proceso__tipoproceso__nombre']
+    'proceso__id', 'proceso__proceso', 'proceso__tipoproceso__id', 'proceso__tipoproceso__nombre']
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data, many=isinstance(request.data,list))
