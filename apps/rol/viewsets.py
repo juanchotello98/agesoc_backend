@@ -8,4 +8,4 @@ class RolViewSet(viewsets.ModelViewSet):
     queryset = Rol.objects.all()
     serializer_class = RolSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['id','nombre']
+    filterset_fields = ['id','rol']

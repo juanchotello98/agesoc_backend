@@ -8,5 +8,5 @@ class CargoViewSet(viewsets.ModelViewSet):
     queryset = Cargo.objects.all()
     serializer_class = CargoSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['id','nombre']
+    filterset_fields = ['id','cargo']
 

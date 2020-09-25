@@ -5,4 +5,4 @@ from rest_framework import serializers, fields
 class RolSerializer(serializers.ModelSerializer):
 	class Meta: 
 		model = Rol
-		fields = ('id', 'nombre')
+		fields = ('id', 'rol')

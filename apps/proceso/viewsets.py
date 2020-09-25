@@ -8,4 +8,4 @@ class ProcesoViewSet(viewsets.ModelViewSet):
     queryset = Proceso.objects.all()
     serializer_class = ProcesoSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['id','nombre','tipoproceso','tipoproceso__nombre','tipoproceso__id']
+    filterset_fields = ['id','proceso','tipoproceso','tipoproceso__nombre','tipoproceso__id']

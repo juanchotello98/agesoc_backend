@@ -6,4 +6,4 @@ from rest_framework import serializers, fields
 class CargoSerializer(serializers.ModelSerializer):
 	class Meta: 
 		model = Cargo
-		fields = ('id','nombre')
+		fields = ('id','cargo')
