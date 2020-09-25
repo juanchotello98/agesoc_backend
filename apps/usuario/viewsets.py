@@ -8,9 +8,9 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     serializer_class = UsuarioSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['cedula', 'nombre', 'apellido','actividad_colectiva', 'ips', 
-    'cargo__id', 'cargo__nombre',
-    'rol__id','rol__nombre',
-    'proceso__id', 'proceso__nombre','proceso__tipoproceso__id','proceso__tipoproceso__nombre']
+    'cargo__id', 'cargo__cargo',
+    'rol__id','rol__rol',
+    'proceso__id', 'proceso__proceso','proceso__tipoproceso__id','proceso__tipoproceso__nombre']
 
     def perfom_create(self, serializer):
         new_user = Usuario.objects.create(username=self.request.data.get("cedula"))
