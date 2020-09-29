@@ -7,7 +7,7 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['cedula', 'nombre', 'apellido','actividad_colectiva', 'ips', 
+    filterset_fields = ['cedula', 'nombre', 'apellido','actividad_colectiva', 'ips', 'respondio', 'evaluado', 
     'cargo__id', 'cargo__cargo',
     'rol__id','rol__rol',
     'proceso__id', 'proceso__proceso','proceso__tipoproceso__id','proceso__tipoproceso__nombre']

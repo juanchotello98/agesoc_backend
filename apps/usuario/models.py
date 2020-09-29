@@ -34,6 +34,7 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     rol = models.ForeignKey(Rol, related_name='usuarios',default=1, on_delete=models.CASCADE) #default = Evaluado
     proceso = models.ForeignKey(Proceso, related_name='usuarios',default=20, on_delete=models.CASCADE) #default = GESTIÓN DE LA INFORMACIÓN
     respondio = models.BooleanField(default=False)
+    evaluado = models.BooleanField(default=False)
     
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
